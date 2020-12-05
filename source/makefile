@@ -10,8 +10,17 @@
 UPX=upx --8086
 
 ############# WATCOM ########################
-# CC=wcl
-# CFLAGS=-oas -s -wx -we -zq -fm -fe=
+# -we treat all warnings as errors
+# -wx set warning level to max
+# -zq operate quietly
+# -fm[=<map_file>]  generate map file
+# -fe=<executable> name executable file
+
+CC=wcl
+CFLAGS=-oas -bt=DOS -zp1 -s -0 -wx -we -zq -fm -fe=
+# -m{t,s,m,c,l,h}  memory model 
+COMFLAGS=-mt -lt
+EXEFLAGS=-mc
 
 ############# TURBO_C ########################
 # -w warn -M create map -f- no floating point -Z register optimize
@@ -22,10 +31,10 @@ UPX=upx --8086
 # *** changed 7/2004: tiny has near qsort / malloc pointers, very limited!
 # compact large: large has far function pointers, compact only far heap.
 # makes no real difference here, but compact saves a few bytes in size.
-CC=tcc
-CFLAGS=-w -M -f- -a- -K -ln -e
-COMFLAGS=-mt -lt -Z -O -k-
-EXEFLAGS=-mc -N -Z -O -k-
+# CC=tcc
+# CFLAGS=-w -M -f- -a- -K -ln -e
+# COMFLAGS=-mt -lt -Z -O -k-
+# EXEFLAGS=-mc -N -Z -O -k-
 
 CFILES=sort.c
 

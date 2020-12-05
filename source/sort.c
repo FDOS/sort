@@ -22,7 +22,13 @@
 #include <string.h>
 
 #include "kitten.h"
+
+#ifdef __WATCOMC__
+#define O_RDONLY        0x0000  /* open for read only */
+#else /* not __WATCOMC__ */
 #include <fcntl.h> /* O_RDONLY */
+#endif
+
 #define StdIN  0
 #define StdOUT 1
 #define StdERR 2
@@ -106,7 +112,7 @@ WriteString(char *s, int handle) /* much smaller than fputs */
 }
 
 int
-cmpr(void *a, void *b)
+cmpr(const void *a, const void *b)
 {
     unsigned char *A, *B, *C;
 
