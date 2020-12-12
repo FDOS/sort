@@ -64,8 +64,6 @@ char catfile[128];		/* full path to _kitten_catalog */
 char getlbuf[1024]; /* read buffer (better speed) -- 7/2004: 1k, not 8k */
 char * getlp;       /* current point in buffer       */
 int getlrem = -1;   /* remaining bytes in buffer     */
-char lastcr = 0;    /* for 2byte CR LF sequences     */
-
 
 
 /* DOS handle based file usage */
@@ -531,31 +529,38 @@ int get_char(int file) {
  * be used for 2 files at the same time.
  */
 
-int get_line (int file, char *str, int size)
+int get_line (int file, char *orig_str, int size)
 {
-  int success = 0;
   int ch;
+  char *str = orig_str;
 
   if ((size == 0) || (str == NULL)) { /* re-init get_line buffers */
     getlp = getlbuf;
     getlrem = -1;
-    lastcr = 0;
     return 0;
   }
 
   str[0] = '\0';
 
-  while ( (size > 0) && (success == 0) ) {
+  while (size > 0) {
     ch = get_char (file);
-    if (ch < 0)
-      break; /* (can cause fail if no \n found yet) */
+    if (ch < 0) {
+      /* encountered EOF / read error, so no more content*/
+      str[0] = '\0';
+
+      /* test if the pointers are equal, there is not content in the buffer */
+      if(str == orig_str)
+        return 0;  /* fail, no more content */
+      
+      return 1; /* success */
+    }
 
     if (ch == '\r')
       ch = get_char (file); /* ignore \r */
 
     str[0] = ch;
 
-    if ( (ch == '\n') || (ch == '\r') ) { /* done? */
+    if ( (ch == '\n') || (ch == '\r') || (ch < 0) ) { /* done? */
       str[0] = '\0';
       return 1; /* success */
     }
@@ -567,7 +572,7 @@ int get_line (int file, char *str, int size)
 
   str[0] = '\0'; /* terminate buffer */
 
-  return success;
+  return 0; /* fail, because the line is longer than the buffer? */
 
 }
 

@@ -1,0 +1,5 @@
+This test for a sudden end of file.
+Older versions of SORT, 1.5.1 and below, experienced problems with this.
+This was due to the get_line() function in the Kitten library.
+If SORT has the bug, the line "EOF (end of file)" will be missing.
+EOF (end of file)
