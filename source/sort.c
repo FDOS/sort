@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "kitten.h"
+#include "../kitten/kitten.h"
 
 #ifdef __WATCOMC__
 #define O_RDONLY        0x0000  /* open for read only */
