@@ -15,7 +15,7 @@ UPX=upx --8086
 #     --best for smallest
 
 sort.exe sort.com: sort.c ../kitten/kitten.c
-	$(CC) $(CFLAGS)sort $^
+	$(CC) $(CFLAGS)$@ $^ $(LDFLAGS)
 	$(UPX) $@
 
 clean:
