@@ -49,13 +49,13 @@ all: sort.exe
 # no space between -e and find (set exe file name)!
 # upx either find.com or find.exe, depends...
 
-sort.com: $(CFILES) kitten.c makefile
-	$(CC) $(COMFLAGS) $(CFLAGS)sort $(CFILES) kitten.c
-	$(UPX) sort.com
+sort.com: $(CFILES) ../kitten/kitten.c Makefile
+	$(CC) $(COMFLAGS) $(CFLAGS)sort $(CFILES) ../kitten/kitten.c
+	$(UPX) $@
 
-sort.exe: $(CFILES) kitten.c makefile
-	$(CC) $(EXEFLAGS) $(CFLAGS)sort $(CFILES) kitten.c
-	$(UPX) sort.exe
+sort.exe: $(CFILES) ../kitten/kitten.c Makefile
+	$(CC) $(EXEFLAGS) $(CFLAGS)sort $(CFILES) ../kitten/kitten.c
+	$(UPX) $@
 
 clean:
 	-del *.obj
