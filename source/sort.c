@@ -23,6 +23,10 @@
 
 #include "../kitten/kitten.h"
 
+#if !defined(__TURBOC__)
+#include <unistd.h>
+#endif
+
 #ifdef __WATCOMC__
 #define O_RDONLY        0x0000  /* open for read only */
 #else /* not __WATCOMC__ */
