@@ -27,6 +27,10 @@
 #include <unistd.h>
 #endif
 
+#if defined(__GNUC__)
+#include <libi86/stdlib.h>
+#endif
+
 #ifdef __WATCOMC__
 #define O_RDONLY        0x0000  /* open for read only */
 #else /* not __WATCOMC__ */
