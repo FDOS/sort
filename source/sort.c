@@ -270,7 +270,7 @@ int main(int argc, char **argv)
             doss.es = FP_SEG(&collbuf);
             dosr.x.di = FP_OFF(&collbuf);
             intdosx(&dosr,&dosr,&doss);
-            if ((dosr.x.flags & 1) == 1) {
+            if ((dosr.x.cflag) == 1) {
                 WriteString(catgets(cat, 2, 1,
 /* catgets ... */           "Error reading NLS collate table\r\n"),
                     StdERR);
