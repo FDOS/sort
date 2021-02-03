@@ -123,14 +123,14 @@ cmpr(const void *a, const void *b)
     B = *(unsigned char **) b;
 
     if (sortcol > 0) { /* "sort from column... " */
-	if (strlen(A) > sortcol)
+	if (strlen((char *)A) > sortcol)
 	    A += sortcol;
 	else
-	    A = "";
-	if (strlen(B) > sortcol)
+	    A = (unsigned char *)"";
+	if (strlen((char *)B) > sortcol)
 	    B += sortcol;
 	else
-	    B = "";
+	    B = (unsigned char *)"";
     }
     
     if (rev) { /* reverse sort: swap strings */
@@ -153,7 +153,7 @@ cmpr(const void *a, const void *b)
         return 1;
     } else {
 #endif
-        return strcmp(A, B);
+        return strcmp((char *)A, (char *)B);
 #ifdef __MSDOS__
     }
 #endif
