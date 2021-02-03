@@ -17,6 +17,7 @@
 *    along with this program; if not, write to the Free Software
 *    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 */
+#include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -29,12 +30,6 @@
 
 #if defined(__GNUC__)
 #include <libi86/stdlib.h>
-#endif
-
-#ifdef __WATCOMC__
-#define O_RDONLY        0x0000  /* open for read only */
-#else /* not __WATCOMC__ */
-#include <fcntl.h> /* O_RDONLY */
 #endif
 
 #define StdIN  0
