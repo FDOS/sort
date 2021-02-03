@@ -30,6 +30,7 @@
 
 #if defined(__GNUC__)
 #include <libi86/stdlib.h>
+#define far __far
 #endif
 
 #define StdIN  0
