@@ -162,7 +162,9 @@ cmpr(const void *a, const void *b)
 void
 usage(nl_catd cat)
 {
+#if !defined(__GNUC__)
     if (cat != cat) {}; /* avoid unused argument error in kitten */
+#endif
   
     WriteString("FreeDOS SORT v1.4\r\n", StdERR);	/* *** VERSION *** */
 
