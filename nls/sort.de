@@ -1,7 +1,7 @@
-2.0:UngÅltiger Parameter\r\n
+2.0:Ung√ºltiger Parameter\r\n
 0.0:    SORT [/R] [/+n] [/A] [/?] [Datei]\r\n
 0.1:    /R    sortiert in umgekehrter Reihenfolge\r\n
-# 0.2:    /N    aktiviert NLS UnterstÅtzung\r\n
+# 0.2:    /N    aktiviert NLS Unterst√ºtzung\r\n
 0.2:    /A    sortiere strikt nach ASCII, ignoriere COUNTRY Einstellung\r\n
 0.3:    /+n   sortiert ab Spalte n (1..)\r\n
 0.4:    /?    zeigt diesen Hilfetext an\r\n

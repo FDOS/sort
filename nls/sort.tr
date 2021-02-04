@@ -1,12 +1,12 @@
-2.0:Ge‡ersiz parametre\r\n
+2.0:GeÃ§ersiz parametre\r\n
 0.0:    SORT [/R] [/+num] [/A] [/?] [file]\r\n
-0.1:    /R    Ters sral\r\n
-0.2:    /A    COUNTRY sras yerine ASCII kullan\r\n
-0.3:    /+num sralamaya stun numarasndan baŸla, 1'den baŸlar\r\n
-0.4:    /?    yardm\r\n
+0.1:    /R    Ters sÄ±ralÄ±\r\n
+0.2:    /A    COUNTRY sÄ±rasÄ± yerine ASCII kullan\r\n
+0.3:    /+num sÄ±ralamaya sÃ¼tun numarasÄ±ndan baÅŸla, 1'den baÅŸlar\r\n
+0.4:    /?    yardÄ±m\r\n
 2.1:NLS harman tablosu okunurken hata\r\n
-2.2:ASCII sras kullanlyor (eski DOS srm).\r\n
-2.3:SORT: Dosya a‡lamyor
-2.4: okuma i‡in\r\n
+2.2:ASCII sÄ±rasÄ± kullanÄ±lÄ±yor (eski DOS sÃ¼rÃ¼mÃ¼).\r\n
+2.3:SORT: Dosya aÃ§Ä±lamÄ±yor
+2.4: okuma iÃ§in\r\n
 2.5:SORT: Yetersiz bellek\r\n
-2.6:SORT: Kayt says olabilecek en ‡ok sayy aŸyor\r\n
+2.6:SORT: KayÄ±t sayÄ±sÄ± olabilecek en Ã§ok sayÄ±yÄ± aÅŸÄ±yor\r\n
