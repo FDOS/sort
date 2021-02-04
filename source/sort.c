@@ -358,7 +358,7 @@ int main(int argc, char **argv)
 
     for (i = 0; i < nr; i++) {
 	WriteString(list[i], StdOUT);
-	WriteString("\r\n",StdOUT);
+	WriteString("\n",StdOUT);
     }
     catclose(cat);
     return 0;
