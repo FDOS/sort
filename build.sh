@@ -16,7 +16,7 @@ elif [ x"${COMPILER}" = "xwatcom" ] ; then
   export PATH=${PATH}:${WATCOM}/binl64
   export INCLUDE=${WATCOM}/h
   export CC="wcl"
-  export CFLAGS="-bt=DOS -bcl=DOS -ms -lr -fe="
+  export CFLAGS="-bt=DOS -bcl=DOS -D__MSDOS__ -ms -lr -fe="
   export LDFLAGS=""
   TARGET="sort.exe"
 
