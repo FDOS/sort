@@ -16,7 +16,7 @@ set INCLUDE=C:\WATCOM\h
 set CC=wcl
 set COMFLAGS=-mt -lt
 set EXEFLAGS=-mc
-set CFLAGS=-oas -bt=DOS -zp1 -s -0 -wx -we -zq -fm %EXEFLAGS% -fe=
+set CFLAGS=-oas -bt=DOS -D__MSDOS__ -zp1 -s -0 -wx -we -zq -fm %EXEFLAGS% -fe=
 goto doit
 
 :tcc
