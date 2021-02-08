@@ -3,7 +3,7 @@
 /*    C:\..> rexx text.rex [path_to\sort] */
 /* The exit code from this Rexx script is the number of failed tests, unless if something goes badly wrong. */
 
-/*    C:\..\sort\tests> rexx text.rex ..\source\sort */
+/*    C:\..\sort\tests> rexx text.rex ..\src\sort */
 
 /* It is suggested to put rexx.exe is in you PATH. */
 
@@ -14,11 +14,11 @@ SORT = ARG(1)
 
 if SORT = '' then
     do
-    say "The argument was empty. Do you want to use the default: '..\source\sort'?"
+    say "The argument was empty. Do you want to use the default: '..\src\sort'?"
     pull yn
     if yn = 'Y' then
         do
-            SORT = '..\source\sort'
+            SORT = '..\src\sort'
         end
     end
 

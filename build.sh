@@ -35,4 +35,4 @@ else
   exit 1
 fi
 
-make -C source ${TARGET}
+make -C src ${TARGET}
