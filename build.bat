@@ -41,5 +41,19 @@ set CFLAGS=-I../kitten %CFLAGS%
 goto doit
 
 :doit
-rem We use GNU make for all targets
+set EXTRA_OBJS=
+
+set EXTRA_OBJS=%EXTRA_OBJS% kitten.obj
+rem # if you want to build without kitten comment the above and uncomment
+rem the following
+rem set CFLAGS=-DNOCATS %CFLAGS%
+
+set UPXARGS=upx --8086 --best
+rem if you don't want to use UPX set
+rem     UPXARGS=-rem
+rem if you use UPX: then options are
+rem     --8086 for 8086 compatibility
+rem   or
+rem     --best for smallest
+
 make -C src
