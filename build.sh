@@ -40,6 +40,11 @@ export EXTRA_OBJS="${EXTRA_OBJS} kitten.obj"
 # the following
 # export CFLAGS="-DNOCATS ${CFLAGS}"
 
+export EXTRA_OBJS="${EXTRA_OBJS} tnyprntf.obj"
+# if you want to build without tnyprntf comment the above and uncomment
+# the following
+# export CFLAGS="-DNOPRNTF ${CFLAGS}"
+
 export UPXARGS="upx --8086 --best"
 # if you don't want to use UPX set
 #     UPXARGS=true
