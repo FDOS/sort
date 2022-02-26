@@ -7,6 +7,9 @@ _CFLAGS = $(subst -fe=,-fo=,$(CFLAGS))
 kitten.obj: ../kitten/kitten.c
 	$(CC) $(_CFLAGS)$@ -c $^
 
+tnyprntf.obj: ../tnyprntf/tnyprntf.c
+	$(CC) $(_CFLAGS)$@ -c $^
+
 sort.exe sort.com: sort.c $(EXTRA_OBJS)
 	$(CC) $(CFLAGS)$@ $^ $(LDFLAGS)
 	$(UPXARGS) $@

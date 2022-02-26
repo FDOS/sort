@@ -23,6 +23,7 @@
 #include <string.h>
 
 #include "../kitten/kitten.h"
+#include "../tnyprntf/tnyprntf.h"
 
 #if !defined(__TURBOC__)
 #include <unistd.h>
@@ -39,6 +40,26 @@
 
 #ifndef __MSDOS__
 #include <malloc.h>
+#endif
+
+#if defined(__GNUC__)
+/* Naive implementation of atol(), only decimal digits allowed, no signs */
+static long minimal_atol(const char *s) {
+    long val;
+    const char *p;
+
+    for (val = 0, p = s; *p; p++) {
+        if (*p == ' ')
+            continue;
+        if (*p < '0' || *p > '9')
+            break;
+        val *= 10;
+        val += *p - '0';
+    }
+
+    return val;
+}
+#define atol(s) minimal_atol(s)
 #endif
 
 #ifdef __MSDOS__
@@ -109,12 +130,6 @@ int             help;		/* help flag */
 int             sortcol;	/* sort column */
 int             err = 0;	/* error counter */
 
-void
-WriteString(char *s, int handle) /* much smaller than fputs */
-{
-  write(handle, s, strlen(s));
-}
-
 int
 cmpr(const void *a, const void *b)
 {
@@ -167,21 +182,14 @@ usage(nl_catd cat)
     if (cat != cat) {}; /* avoid unused argument error in kitten */
 #endif
   
-    WriteString("FreeDOS SORT v1.4\r\n", StdERR);	/* *** VERSION *** */
-
+    PRINTF("FreeDOS SORT v1.4\n");	/* *** VERSION *** */
     if (err)
-        WriteString(catgets(cat, 2, 0, "Invalid parameter\r\n"), StdERR);
-    WriteString(catgets(cat, 0, 0, "    SORT [/R] [/+num] [/A] [/?] [file]\r\n"), StdERR);
-    WriteString(catgets(cat, 0, 1, "    /R    Reverse order\r\n"), StdERR);
-#ifdef __MSDOS__
-#if 0
-    WriteString(catgets(cat, 0, 2, "    /N    Enable NLS support\r\n"), StdERR);
-#endif
-    WriteString(catgets(cat, 0, 2, "    /A    Sort by ASCII, ignore COUNTRY\r\n"), StdERR);
-#endif
-    WriteString(catgets(cat, 0, 3, 
-        "    /+num start sorting with column num, 1 based\r\n"), StdERR);
-    WriteString(catgets(cat, 0, 4, "    /?    help\r\n"), StdERR);
+        PRINTF(catgets(cat, 2, 0, "Invalid parameter\n"));
+    PRINTF(catgets(cat, 0, 0, "    SORT [/R] [/+num] [/A] [/?] [file]\n"));
+    PRINTF(catgets(cat, 0, 1, "    /R    Reverse order\n"));
+    PRINTF(catgets(cat, 0, 2, "    /A    Sort by ASCII, ignore COUNTRY\n"));
+    PRINTF(catgets(cat, 0, 3, "    /+num start sorting with column num, 1 based\n"));
+    PRINTF(catgets(cat, 0, 4, "    /?    help\n"));
 
 }
 
@@ -244,7 +252,7 @@ int main(int argc, char **argv)
 		help = 1;
 		break;
 	    case '+':
-		sortcol = atoi(cp + 1);
+		sortcol = atol(cp + 2);
 		if (sortcol)
 		    sortcol--;
 		break;
@@ -274,9 +282,7 @@ int main(int argc, char **argv)
             dosr.x.di = FP_OFF(&collbuf);
             intdosx(&dosr,&dosr,&doss);
             if ((dosr.x.cflag) == 1) {
-                WriteString(catgets(cat, 2, 1,
-/* catgets ... */           "Error reading NLS collate table\r\n"),
-                    StdERR);
+                PRINTF(catgets(cat, 2, 1, "Error reading NLS collate table\n"));
                 nls = 0;
             } else {
                 /* ... CX is returned as table length ... */
@@ -284,17 +290,15 @@ int main(int argc, char **argv)
                 collate++; /* skip leading word, which is */
                 collate++; /* not part of the table */
  		/* "nls on" accepted now */
- 		/* printf("NLS SORT ENABLED %d\r\n",dosr.x.cx); */
+                /* printf("NLS SORT ENABLED %d\n",dosr.x.cx); */
 	    }
         } else {
-           WriteString(catgets(cat, 2, 2,
-/* catgets ... */       "Only DOS 3.3 or newer supports NLS!\r\n"),
-               StdERR);
+           PRINTF(catgets(cat, 2, 2, "Only DOS 3.3 or newer supports NLS!\n"));
            nls = 0;	/* *** disable NLS sort order *** */
         }
     } else {
         /* accepting "nls off" is easy ;-) */
-        /* printf("NLS SORT DISABLED AT USER REQUEST\r\n"); */
+        /* printf("NLS SORT DISABLED AT USER REQUEST\n"); */
     }
 #endif
 /* *** end of former switch case "N" *** */
@@ -303,10 +307,7 @@ int main(int argc, char **argv)
     if (strlen(filename)) {
 	if ((fi = open(filename, O_RDONLY)) == -1) {
 	    /* was: ... fopen(...,"r") ... == NULL ... */
-	    WriteString(catgets(cat, 2, 3, "SORT: Can't open "), StdERR);
-	    WriteString(filename,StdERR);
-	    WriteString(catgets(cat, 2, 4, " for read\r\n"), StdERR);
-	    /* avoided 1.5k-2k overhead of *printf()... */
+	    PRINTF(catgets(cat, 2, 3, "SORT: Can't open '%s' for read\n"), filename);
 	    catclose(cat);
 	    exit(2);
 	}
@@ -330,12 +331,7 @@ int main(int argc, char **argv)
 	    /* malloc might have big overhead, but we cannot avoid it */
 	if (list[nr] == NULL) {
 	    out_of_mem:
-	    WriteString(catgets(cat, 2, 5, "SORT: Insufficient memory\r\n"),
-	        StdERR);
-#if 1
-	    itoa(nr, temp, 10);
-	    WriteString(temp, StdERR); /* print "offending" line number */
-#endif
+	    PRINTF(catgets(cat, 2, 5, "SORT: Insufficient memory\n"));
 	    catclose(cat);
 	    exit(3);
 	}
@@ -347,9 +343,7 @@ int main(int argc, char **argv)
 #endif
 
     if (nr == MAXRECORDS) {
-	WriteString(catgets(cat, 2, 6,
-            "SORT: number of records exceeds maximum\r\n"), /* catgets ... */
-            StdERR);
+	PRINTF(catgets(cat, 2, 6, "SORT: number of records exceeds maximum\n"));
 	catclose(cat);
 	exit(4);
     }
@@ -357,10 +351,9 @@ int main(int argc, char **argv)
     qsort((void *) list, nr, sizeof(char *), cmpr);	/* *main action* */
 
     for (i = 0; i < nr; i++) {
-	WriteString(list[i], StdOUT);
-	WriteString("\n",StdOUT);
+        write(StdOUT, list[i], strlen(list[i]));
+        write(StdOUT, "\n", 1);
     }
     catclose(cat);
     return 0;
 }
-
