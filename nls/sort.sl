@@ -4,6 +4,7 @@
 2.0:Neveljaven parameter\n
 0.0:    SORT [/R] [/+n] [/A] [/?] [file]\n
 0.1:    /R  Obratni vrstni red\n
+# 0.2 Missing
 0.3:    /+n Začni razvrščati s stolpcem n (oštevičeni so od 1 dalje)\n
 0.4:    /?  Pomoč\n
 2.1:Napaka pri prebiranju NLS tabele za razvrščanje\n
