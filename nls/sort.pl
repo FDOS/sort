@@ -3,7 +3,7 @@
 # Polish letters encoded in the MAZOVIA standard
 
 2.0:Niepoprawny parametr\n
-0.0:    SORT [/R] [/+num] [/?]\n
+0.0:    SORT [/R] [/+num] [/A] [/?] [file]\n
 0.1:    /R    Odwraca kolejnoûç\n
 0.3:    /+num Uruchamia sortowanie kolumn num, bazowane na 1\n
 0.4:    /?    Pomoc\n

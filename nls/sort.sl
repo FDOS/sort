@@ -2,7 +2,7 @@
 # Translated by Matej Horvat (http://matejhorvat.si/), last update 2013-04-29
 
 2.0:Neveljaven parameter\n
-0.0:    SORT [/R] [/+n] [/?]\n
+0.0:    SORT [/R] [/+n] [/A] [/?] [file]\n
 0.1:    /R  Obratni vrstni red\n
 0.3:    /+n Začni razvrščati s stolpcem n (oštevičeni so od 1 dalje)\n
 0.4:    /?  Pomoč\n
