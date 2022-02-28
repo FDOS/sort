@@ -7,7 +7,6 @@
 # 0.2:    /N    Habilita suporte NLS\n - removed 7/2004
 2.1:Error ao ler a tabela NLS\n
 2.2:Usando ordenação ASCII (versão antiga do DOS).\n
-2.3:SORT: Não pode abrir arquivo
-2.4: para ler\n
+2.3:SORT: Não pode abrir arquivo '%s' para ler\n
 2.5:SORT: memória insuficiente\n
 2.6:SORT: número de linhas excede o máximo suportado\n

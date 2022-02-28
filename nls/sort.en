@@ -7,7 +7,6 @@
 0.4:    /?    help\n
 2.1:Error reading NLS collate table\n
 2.2:Using ASCII sort order (old DOS version).\n
-2.3:SORT: Can't open file 
-2.4: for read\n
+2.3:SORT: Can't open file '%s' for read\n
 2.5:SORT: insufficient memory\n
 2.6:SORT: number of records exceeds maximum\n

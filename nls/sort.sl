@@ -9,7 +9,6 @@
 0.4:    /?  Pomoč\n
 2.1:Napaka pri prebiranju NLS tabele za razvrščanje\n
 2.2:Samo DOS 3.3 ali novejši podpira NLS!\n
-2.3:SORT: Ni mogoče odpreti datoteke
-2.4: za branje\n
+2.3:SORT: Ni mogoče odpreti datoteke '%s' za branje\n
 2.5:SORT: Ni dovolj spomina\n
 2.6:SORT: število zapisov presega maksimum\n

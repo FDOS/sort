@@ -10,7 +10,6 @@
 0.4:    /?    hjälp\n
 2.1:Fel vid läsning av NLS-ordningstabell\n
 2.2:Använd ASCII sorteringsordning (gammal DOS-version)\n
-2.3:SORT: Kan inte öppna fil
-2.4: för läsning\n
+2.3:SORT: Kan inte öppna fil '%s' för läsning\n
 2.5:SORT: otillräckligt minne\n
 2.6:SORT: antal poster överstiger maximum\n

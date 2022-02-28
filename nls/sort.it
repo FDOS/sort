@@ -9,7 +9,6 @@
 0.4:    /?    Aiuto\n
 2.1:Errore durante la lettura delle tabelle di collazione NLS\n
 2.2:Uso l'ordine ASCII (vecchie versioni DOS).\n
-2.3:SORT: Impossibile aprire il file
-2.4: in lettura\n
+2.3:SORT: Impossibile aprire il file '%s' in lettura\n
 2.5:SORT: memoria insufficiente\n
 2.6:SORT: il numero di record supera il massimo consentito\n
