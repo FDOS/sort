@@ -9,7 +9,6 @@
 0.4:    /?    Yardım\n
 2.1:NLS harman tablosu okunurken hata\n
 2.2:ASCII sırası kullanılıyor (eski DOS sürümü).\n
-2.3:SORT: Dosya açılamıyor
-2.4: okunan için\n
+2.3:SORT: Dosya açılamıyor '%s' okunan için\n
 2.5:SORT: Yetersiz bellek\n
 2.6:SORT: Kayıt sayısı olabilecek en çok sayıyı aşıyor\n

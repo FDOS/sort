@@ -11,7 +11,6 @@
 0.4:    /?    palīdzība\n
 2.1:Kļūda nolasot valodas salīdzināšanas tabulu\n
 2.2:Tikai DOS 3.3 un jaunākiem ir valodu atbalsts!\n
-2.3:SORT: Nevaru atvērt failu
-2.4: lasīšanai\n
+2.3:SORT: Nevaru atvērt failu '%s' lasīšanai\n
 2.5:SORT: Nepietiek atmiņas\n
 2.6:SORT: ierakstu skaits pārsniedz maksimumu\n

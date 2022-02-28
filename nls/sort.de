@@ -8,7 +8,6 @@
 0.4:    /?    zeigt diesen Hilfetext an\n
 2.1:Keine NLS / COUNTRY "collate" Tabelle gefunden\n
 2.2:Alte DOS Version, kein NLS / COUNTRY. Verwende ASCII Sortierung.\n
-2.3:SORT: Kann Datei 
-2.4: nicht lesen\n
+2.3:SORT: Kann Datei '%s' nicht lesen\n
 2.5:SORT: Nicht genug Speicher frei\n
 2.6:SORT: Zuviele Zeilen zum Sortieren\n

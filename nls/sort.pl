@@ -10,7 +10,6 @@
 0.4:    /?    Pomoc\n
 2.1:BíÜd w odczycie tablicy NLS\n
 2.2:NLS wymaga DOS w wersji 3.3 lub nowszej!\n
-2.3:SORT: Nie moßna otworzyç pliku 
-2.4: do odczytu\n
+2.3:SORT: Nie moßna otworzyç pliku '%s' do odczytu\n
 2.5:SORT: Zbyt maío pamiëci\n
 2.6:SORT: Liczba rekord¢w przekroczyía obsíugiwane maksimum\n

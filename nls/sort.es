@@ -13,7 +13,6 @@
 0.4:    /?    ayuda\n
 2.1:Error leyendo la tabla de ordenar COUNTRY / NLS\n
 2.2:NLS / COUNTRY sólo soportado por DOS 3.3 o superior\n
-2.3:SORT: No se puede abrir el archivo
-2.4: para lectura\n
+2.3:SORT: No se puede abrir el archivo '%s' para lectura\n
 2.5:SORT: No hay memoria suficiente\n
 2.6:SORT: el número de registros excede el máximo\n
