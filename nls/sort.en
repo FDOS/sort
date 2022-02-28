@@ -1,7 +1,6 @@
 2.0:Invalid parameter\n
 0.0:    SORT [/R] [/+num] [/A] [/?] [file]\n
 0.1:    /R    Reverse order\n
-# 0.2:    /N    Enable NLS support\n - removed 7/2004
 0.2:    /A    Use ASCII instead of COUNTRY sort order\n
 0.3:    /+num start sorting with column num, 1 based\n
 0.4:    /?    help\n

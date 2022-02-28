@@ -4,7 +4,6 @@
 0.2:    /A    Usa ASCII ao invés do COUNTRY na ordem de ordenação\n
 0.3:    /+num Inicia ordenação com a coluna numérica num\n
 0.4:    /?    Ajuda\n
-# 0.2:    /N    Habilita suporte NLS\n - removed 7/2004
 2.1:Error ao ler a tabela NLS\n
 2.2:Usando ordenação ASCII (versão antiga do DOS).\n
 2.3:SORT: Não pode abrir arquivo '%s' para ler\n
