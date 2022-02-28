@@ -6,7 +6,6 @@
 2.0:Nepareizs parameters\n
 0.0:    SORT [/R] [/+num] [/A] [/?] [file]\n
 0.1:    /R    Kārtot apgrieztā secībā\n
-# 0.2:    /N    Ieslēgt valodu atbalstu\n
 0.3:    /+num sākt sortēšanu ar kolonu num (bāze ir 1)\n
 0.4:    /?    palīdzība\n
 2.1:Kļūda nolasot valodas salīdzināšanas tabulu\n

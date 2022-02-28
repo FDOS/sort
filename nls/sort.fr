@@ -4,7 +4,6 @@
 2.0:Paramètre invalide\n
 0.0:    SORT [/R] [/+num] [/?]\n
 0.1:    /R    Inverse l'ordre\n
-0.2:    /N    Active la gestion de NLS\n
 0.3:    /+n   Ne prend pas en compte les n premières colonnes\n
 0.4:    /?    Aide\n
 2.1:Erreur lors de la lecture du tableau NLS\n

@@ -4,7 +4,6 @@
 2.0:Ogiltig parameter\n
 0.0:    SORT [/R] [/+num] [/A] [/?] [fil]\n
 0.1:    /R    Omvänd ordning\n
-# 0.2:    /N    Aktivera NLS-stöd\n - borttagen 7/2004
 0.2:    /A    Använd ASCII sorteringsordning istället för den för COUNTRY\n
 0.3:    /+num börja sortera med kolumn num, 1-baserat\n
 0.4:    /?    hjälp\n

@@ -2,7 +2,6 @@
 2.0:Ungültiger Parameter\n
 0.0:    SORT [/R] [/+num] [/A] [/?] [Datei]\n
 0.1:    /R    sortiert in umgekehrter Reihenfolge\n
-# 0.2:    /N    aktiviert NLS Unterstützung\n
 0.2:    /A    sortiere strikt nach ASCII, ignoriere COUNTRY Einstellung\n
 0.3:    /+num sortiert ab Spalte n (1..)\n
 0.4:    /?    zeigt diesen Hilfetext an\n

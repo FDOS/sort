@@ -5,7 +5,6 @@
 2.0:Niepoprawny parametr\n
 0.0:    SORT [/R] [/+num] [/?]\n
 0.1:    /R    Odwraca kolejnoûç\n
-0.2:    /N    WíÜcza obsíugë NLS\n
 0.3:    /+num Uruchamia sortowanie kolumn num, bazowane na 1\n
 0.4:    /?    Pomoc\n
 2.1:BíÜd w odczycie tablicy NLS\n
